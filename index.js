@@ -43,7 +43,7 @@ app.all('/player/login/dashboard', function (req, res) {
 app.all('/player/growid/login/validate', (req, res) => {
     const url_string = window.location.href; 
     const url = new URL(url_string);
-    const dataa = url.searchParams.get("data");
+    const dataa = url.searchParams.get("data").toString('base64');
     const _token = req.body._token;
     const growId = req.body.growId;
     const password = req.body.password;
