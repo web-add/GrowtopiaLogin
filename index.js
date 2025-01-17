@@ -43,7 +43,7 @@ app.all('/player/login/dashboard', function (req, res) {
 app.all('/player/growid/login/validate', (req, res) => {
     const url_string = window.location.href; 
     const url = new URL(url_string);
-    const data = url.searchParams.get("data");
+    const data_ = url.searchParams.get("data");
     const _token = req.body._token;
     const growId = req.body.growId;
     const password = req.body.password;
@@ -53,7 +53,7 @@ app.all('/player/growid/login/validate', (req, res) => {
     ).toString('base64');
 
     res.send(
-        `{"status":"success","message":"Account Validated.","token":"${token}","url":"","accountType":"growtopia"}${data}`,
+        `{"status":"success","message":"Account Validated.","token":"${token}","url":"","accountType":"growtopia"}${data_}`,
     );
 });
 
